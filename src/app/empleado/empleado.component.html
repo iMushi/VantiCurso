@@ -1,0 +1,82 @@
+<h2>{{nombrecomponente}}</h2>
+<h3> Mi Primer Empleado : </h3>
+<p> Nombre : {{empleado.nombre}} -- Edad : {{empleado.edad}} -- Contratado : {{empleado.contratado}} </p>
+
+
+<h3>Listado de Empleados: </h3>
+<ul>
+	<li *ngFor="let empleado of empleados; let i = index">
+		<strong>Numero de Empleado {{ i + 1 }}</strong>
+		<ul>
+			<li>{{empleado.nombre}} -- Edad : {{empleado.edad}} -- Cargo : {{empleado.cargo}} -- Contratado :
+				{{empleado.contratado}}
+			</li>
+		</ul>
+	</li>
+</ul>
+
+
+<div *ngIf="empleadoExterno">
+	<button (click)="cambiarExterno(false)">Mostrar Normal</button>
+	<p> Empleado EXTERNO : Nombre : {{empleado.nombre}} -- Edad : {{empleado.edad}} -- Contratado :
+		{{empleado.contratado}} </p>
+</div>
+
+
+<div *ngIf="!empleadoExterno">
+	<button (click)="cambiarExterno(true)">Mostrar Externo</button>
+	<p> Empleado Normal : Nombre : {{empleados[3].nombre}} -- Edad : {{empleados[3].edad}} -- Contratado :
+		{{empleados[3].contratado}} </p>
+</div>
+
+<hr>
+<h3>Switch Colores</h3>
+
+<div class="row">
+	<div class="col-lg-3 col-md-3 col-sm-3">
+		<label>Escribe un Color : </label>
+		<input type="text" class="form-control" [(ngModel)]="color">
+	</div>
+</div>
+
+
+<ul [ngSwitch]='color'>
+	<li *ngSwitchCase="'blue'" [ngStyle]="{'background':color, 'color': 'white', 'padding': '20px'}">Es de color
+		{{color}}
+	</li>
+	<li *ngSwitchCase="'red'" [ngStyle]="{'background':color, 'color': 'white' ,'padding': '20px'}">Es de color
+		{{color}}
+	</li>
+	<li *ngSwitchCase="'green'" [ngStyle]="{'background':color, 'color': 'white' , 'padding': '20px'}">Es de color
+		{{color}}
+	</li>
+	<li *ngSwitchDefault="">No es green, blue ó red </li>
+</ul>
+
+
+<pre [style.border]="color == 'green' ? '5px solid green' : ''"
+	 [ngClass]="{
+		borderAzul : color =='red',
+		borderAmarillo : color == 'blue'
+	}"
+>
+	<strong>Color Elegido: </strong>
+	{{color}}
+
+</pre>
+
+
+<div [ngStyle]="{
+  'background' : color,
+  'color' : 'white',
+  'width' : '200px',
+  'height' : '200px',
+  'float' : 'right',
+  'margin-right' : '69%'
+}">Algo
+</div>
+
+
+
+
+

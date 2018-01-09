@@ -1,16 +1,27 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+
+import {AppComponent} from './app.component';
+
+import {PrimerbindingComponent} from "./primerBinding/primerbinding.component";
+import {EmpleadoComponent} from "./empleado/empleado.component";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		PrimerbindingComponent,
+		EmpleadoComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		ReactiveFormsModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
