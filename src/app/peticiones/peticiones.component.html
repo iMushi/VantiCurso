@@ -1,0 +1,15 @@
+<p>
+	<button (click)="getPosts()"> Hacer Peticion</button>
+</p>
+<hr>
+<p>
+	<button (click)="postInfo()"> Hacer Peticion POST</button>
+</p>
+
+<input type="text" [(ngModel)]="textoSocket">
+
+<button (click)="enviarMsg()"> Enviar a WS</button>
+
+<p>
+	Resultado WS ==> {{ mensajesWS | async | json }}
+</p>

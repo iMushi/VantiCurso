@@ -1,0 +1,40 @@
+<h1>
+	Captura de Carros
+</h1>
+<form name="formaCarro" #formCarro="ngForm" (ngSubmit)="onSubmit(); formCarro.reset();">
+		<p>
+			<label>Marca</label>
+			<input type="text" name="marca" #marca="ngModel" [(ngModel)]="carro.marca" required pattern="[A-Za-z]*">
+			<span *ngIf="marca.touched && !marca.valid" >
+				La Marca del coche es incorrecto
+			</span>
+		</p>
+		<p>
+			<label>Modelo</label>
+			<input type="text" name="modelo" #modelo="ngModel" [(ngModel)]="carro.modelo" required pattern="[A-Za-z]*">
+			<span *ngIf="modelo.touched && !modelo.valid" >
+				La Marca del coche es incorrecto
+			</span>
+		</p>
+		<p>
+			<label>Color</label>
+			<input type="text" name="color" #color="ngModel" [(ngModel)]="carro.color" required pattern="[A-Za-z]*">
+			<span *ngIf="color.touched && !color.valid" >
+				El Color del coche es incorrecto
+			</span>
+		</p>
+	<input type="submit" value="Agregar Carro" [disabled]="!formCarro.form.valid">
+</form>
+
+<div>
+	<h3>Listado Carros</h3>
+	<ul>
+		<li *ngFor="let carro of carros">
+			{{carro.marca}} {{carro.modelo}} {{carro.color}}
+		</li>
+	</ul>
+</div>
+
+<hr>
+
+<app-recibir-params [jsonParam]="carro"></app-recibir-params>

@@ -8,3 +8,9 @@
 .borderAmarillo {
 	border: 5px solid yellow;
 }
+
+.active {
+	font-weight: bolder;
+	background: yellow;
+	border-bottom: 2px solid black;
+}

@@ -1,0 +1,53 @@
+<h1>
+	Captura de Carros
+</h1>
+<form [formGroup]="formCarro">
+	<p>
+		<label>Marca</label>
+		<input type="text" name="marca" formControlName="marca">
+		<span *ngIf="">
+			La Marca del coche es incorrecto
+		</span>
+	</p>
+	<p>
+		<label>Modelo</label>
+		<input type="text" name="modelo" formControlName="modelo">
+		<span *ngIf="errorModelo">
+			El modelo debe de ser Numerico
+		</span>
+	</p>
+	<p>
+		<label>Color</label>
+		<input type="text" name="color" formControlName="color">
+		<span *ngIf="">
+			El Color del coche es incorrecto
+		</span>
+	</p>
+	<input type="submit" value="Agregar Carro" [disabled]="">
+</form>
+
+<div>
+	<h3>Listado Carros</h3>
+	<ul>
+		<li *ngFor="let carro of carros">
+			{{carro.marca}} {{carro.modelo}} {{carro.color}}
+		</li>
+	</ul>
+</div>
+
+<div>
+	<p>
+		{{ formCarro.get('marca').valid }} - {{ formCarro.get('marca').errors | json }}
+	</p>
+	<p>
+		{{ formCarro.get('modelo').valid }} - {{ formCarro.get('modelo').errors | json }}
+	</p>
+	<p>
+		{{ formCarro.get('color').valid }} - {{ formCarro.get('color').errors | json }}
+	</p>
+</div>
+
+<hr>
+<h3>
+	DatoCompartido : {{datoCompartido}}
+</h3>

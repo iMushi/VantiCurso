@@ -1,0 +1,17 @@
+<button (click)='cambiarPerfil(!isAdmin)'> Cambia Perfil</button>
+
+
+<div  *ngIf="isAdmin; then Admin else noAdmin"  ></div>
+
+
+<ng-template #Admin>
+	<div>
+		Si es Administrador
+	</div>
+</ng-template>
+
+<ng-template #noAdmin>
+	<div>
+		No es el Admin
+	</div>
+</ng-template>

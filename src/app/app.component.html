@@ -1,16 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-
+	<h1>
+		Welcome to {{title}}!
+	</h1>
 </div>
 
-<app-primerbinding></app-primerbinding>
-
-<br>
-
-<app-empleado></app-empleado>
-
-<br>
-
+<nav>
+	<a [routerLink]="['/bienvenido']" [routerLinkActive]="['active']">Bienvenido</a>
+	<a [routerLink]="['/primer']" [routerLinkActive]="['active']">Primer Binding</a>
+	<a [routerLink]="['/empleado']" [routerLinkActive]="['active']">Empleado</a>
+	<a [routerLink]="['/template']" [routerLinkActive]="['active']">Template</a>
+	<a [routerLink]="['/pipes']" [routerLinkActive]="['active']">Pipes</a>
+	<a [routerLink]="['/parametros']" [routerLinkActive]="['active']">Parametros</a>
+	<a [routerLink]="['/carros']" [routerLinkActive]="['active']">Carros</a>
+	<a [routerLink]="['/ModelCarros']" [routerLinkActive]="['active']">Forma Carros ModelDriven</a>
+	<a [routerLink]="['/peticion']" [routerLinkActive]="['active']">Peticiones HTTP</a>
+</nav>
+<hr>
+<router-outlet></router-outlet>

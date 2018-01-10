@@ -4,5 +4,14 @@
 </p>
 <p>
 	Trabajos : {{trabajos}}
-
 </p>
+<p *ngIf="jsonRecibido">
+	Json Recibido: {{ jsonRecibido | json }}
+</p>
+<hr>
+
+<p>
+	<input type="text" [(ngModel)]="datoCompartido" (change)="setDatoCompartido()">
+</p>
+
+<app-recibir-params  [paramUno]="'Hola Mundo'" [texto]="'Parametro Dos'" [jsonParam]="myJson" (datoHijo) = "recibirDatos($event)"  ></app-recibir-params>

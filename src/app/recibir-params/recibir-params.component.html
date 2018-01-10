@@ -1,0 +1,22 @@
+<h1>
+	recibir-params works!
+</h1>
+
+
+<div *ngIf="paramUno">
+	<h3>
+		Primer Parametro: {{paramUno}}
+		<br>
+		Segundo Parametro: {{paramDos}}
+	</h3>
+</div>
+
+<div *ngIf="jsonRecibido">
+	<h3>
+		{{ jsonRecibido | json }}
+	</h3>
+</div>
+
+<hr>
+
+<button (click)="enviarDatoHijo()"> Enviar JSON a Padre </button>
