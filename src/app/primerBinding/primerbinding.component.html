@@ -14,4 +14,13 @@
 	<input type="text" [(ngModel)]="datoCompartido" (change)="setDatoCompartido()">
 </p>
 
-<app-recibir-params  [paramUno]="'Hola Mundo'" [texto]="'Parametro Dos'" [jsonParam]="myJson" (datoHijo) = "recibirDatos($event)"  ></app-recibir-params>
+<app-recibir-params
+	[paramUno]="'Hola Mundo'"
+	[texto]="'Parametro Dos'"
+	[jsonParam]="myJson"
+	(datoHijo) = "recibirDatos($event)"  ></app-recibir-params>
+
+<ngx-qrcode
+	[qrc-element-type]="canvas"
+	[qrc-value] = "datoCompartido"
+	[qrc-version] = "3"></ngx-qrcode>

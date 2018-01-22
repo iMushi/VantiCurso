@@ -18,6 +18,7 @@ import { PeticionesComponent } from './peticiones/peticiones.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RecibirParamsComponent } from './recibir-params/recibir-params.component';
 import { DataServiceService } from './services/data-service.service';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 
 @NgModule({
 	declarations: [
@@ -40,7 +41,8 @@ import { DataServiceService } from './services/data-service.service';
 		BrowserModule,
 		FormsModule,
 		ReactiveFormsModule,
-		routing
+		routing,
+		NgxQRCodeModule
 	],
 	providers: [appRoutingProvider, RestServiceService, DataServiceService],
 	bootstrap: [AppComponent]
